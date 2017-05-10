@@ -45,6 +45,7 @@ BASE URL -> http://x.x.x.x:8080
 5. Assertion Lifetime is left 5 minutes (default value)
 
 6. In the next section of `Assertion Creation`, click `Configure Assertion Creation`
+
 	i) In Identity Mapping, select STANDARD option
 	
 	ii) Under Attribute Contract, SAML_SUBJECT is already provided by default. Over here we'll Extend the Contract by adding the attributes we provide to Rancher while configuring access control. Based on the example in previous section
