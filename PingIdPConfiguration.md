@@ -67,10 +67,10 @@ openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.k
 ## Creating a SP connection from PingFederate server 
 
 1. In PingFederate server, go to **IdP Configuration**. Under **SP Connections**, click on **Create New**. 
-
-	a. Connection Type: Keep the default options and click on **Next**. 
-	b. Connection Options: Keep the default options and click on **Next**. 
-	c. Import Metadata: select the **file** option and updload the `RancherSP_metadata` file that was saved from the Rancher setup. 
+	
+	a. Connection Type: Keep the default options and click on **Next**. </br>
+	b. Connection Options: Keep the default options and click on **Next**. </br>
+	c. Import Metadata: select the **file** option and updload the `RancherSP_metadata` file that was saved from the Rancher setup. </br>
 	d. General Info: Specific fields will be pre-filled from the Rancher metadata that was uploaded: 
 	
 		* PARTNER'S ENTITY ID -> http://<SERVER_IP>:8080/v1-auth/saml/metadata
