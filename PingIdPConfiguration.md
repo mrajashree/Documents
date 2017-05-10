@@ -6,10 +6,12 @@
 
 <h2> In case SP connection is not created </h2>
 <h3> Generating Identitiy Provider metadata </h3>
+
 1. Go To Server Configuration -> ADMINISTRATIVE FUNCTIONS -> Metadata Export -> Select Information to include in Metadata manually -> Protocol preselected -> Attribute Contract
 These attributes are the ones to be provided as input for Rancher Access Control configuration
-For example this is the Attribute contract *pic*
+For example this is the Attribute contract [Attribute Contract IdP](https://github.com/mrajashree/Documents/blob/master/images/IdP-metadata-creation.png)
 and the corresponding fields for access control configuration *pic*
+
 2. Complete the rest of the steps to generate metadata, export it and save as PingIdP_metadata.xml
 
 <h3> Generating Service Provider (Rancher) metadata </h3>
