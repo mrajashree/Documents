@@ -12,7 +12,7 @@ These attributes are the ones to be provided as input for Rancher Access Control
 For example this is the Attribute contract
 ![Attribute Contract IdP](https://github.com/mrajashree/Documents/blob/master/images/IdP-metadata-creation.png)
 
-and the corresponding fields for access control configuration
+and the corresponding fields for Rancher Access Control configuration attributes
 ![Rancher Access Control configuration attributes](https://github.com/mrajashree/Documents/blob/master/images/Rancher-Attributes.png)
 
 2. Complete the rest of the steps to generate metadata, export it and save as PingIdP_metadata.xml
@@ -25,21 +25,29 @@ and the corresponding fields for access control configuration
 `openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.key -out certificate.crt`
 The above command can be used for that
 3. Upload/paste your private key and certificate in these fields. Upload the file PingIdP_metadata.xml in the field for `Metadata XML`
+
 4. Click on `Save`. This saves the entire config in cattle db and generates Rancher Service Provider's metadata.
 Download this metadata from http://x.x.x.x:8080/v1-auth/saml/metadata. Rename this file to RancherSP_metadata
 
 <h3> Creating SP connection from PingFederate server </h3>
+
 1. In PingFederate server, go to IdP Configuration -> SP CONNECTIONS -> Create New
+
 2. Leave the Connection Type and Connection Options sections as they are by default. In the Import Metadata section, select FILE option and upload RancherSP_metadata file
+
 3. The next section, `General Info` will have the following fields prefilled from the Rancher metadata you just uploaded: 
 PARTNER'S ENTITY ID -> http://x.x.x.x:8080/v1-auth/saml/metadata
 CONNECTION NAME -> http://x.x.x.x:8080/v1-auth/saml/metadata
 BASE URL -> http://x.x.x.x:8080
+
 4. In Browser SSO, IDP-INITATED SSO and SP-INITIATED SSO have been selected as SAML Profiles. 
+
 5. Assertion Lifetime is left 5 minutes (default value)
+
 6. In the next section of `Assertion Creation`, click `Configure Assertion Creation`
 	i) In Identity Mapping, select STANDARD option
 	ii) Under Attribute Contract, SAML_SUBJECT is already provided by default. Over here we'll Extend the Contract by adding the attributes we provide to Rancher while configuring access control. Based on the example in previous section
+	![Contract](https://github.com/mrajashree/Documents/blob/master/images/Attribute-Contract-SP%20connection.png)
 	iii) In Authentication Source Mapping, click on 'Map New Adapter Instance'. Select 'PingOne HTML Form Adapter' (provided by default) and click Next
 	iv) In Mapping Method, select the second option, i.e 
 	`RETRIEVE ADDITIONAL ATTRIBUTES FROM A DATA STORE -- INCLUDES OPTIONS TO USE ALTERNATE DATA STORES AND/OR A FAILSAFE MAPPING`
@@ -47,7 +55,7 @@ BASE URL -> http://x.x.x.x:8080
 	vi) Under LDAP Directory Search, enter BASE DN, let SEARCH SCOPE be Subtree. In the section `Attributes to return from search`, you will see Subject DN is already listed. This is where we select our attributes from the LDAP data store. Select and add displayName, givenName, cn and memberOf (with Nested Groups option). Provide a search filter, for example, (sAMAccountName=${username}). 
 	vii) Under Attribute Contract Fulfillment is where you map the attributes you specified while defining attribute contract in step 6.ii, to the attributes you selected from LDAP store in step 6.vi
 	This is how it should be mapped
-	image
+	![mapping](https://github.com/mrajashree/Documents/blob/master/images/AttributeContractFulfillment.png)
 	viiI) Under Failsafe Attribute Source, select ABORT THE SSO TRANSACTION.
 7. In Protocol Settings, click on `Configure Protocol Settings`
 	i) Assertion Consumer Service URL should be http://x.x.x.x:8080/v1-auth/saml/acs (POST)
