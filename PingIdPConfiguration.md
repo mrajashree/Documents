@@ -19,6 +19,8 @@ and the corresponding fields for Rancher Access Control configuration attributes
 
 <h3> Generating Service Provider (Rancher) metadata </h3>
 
+Before proceeding with these steps, make sure the host setting is saved correctly. Go to Admin -> Settings -> Host Registration URL -> Choose 'This site's address' and hit Save
+
 1. On Rancher UI, enter the first four fields under Shibboleth access control based on your attribute contract from previous section. (Refer image *Rancher Access Control configuration attributes* in previous section point 1)
 
 2. Generate private key and certificate for your server
