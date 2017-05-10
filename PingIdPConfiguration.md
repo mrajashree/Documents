@@ -2,15 +2,23 @@
 
 1. After installing PingFederate, select the option to configure PingFederate as an Identity Provider.
 
-2. Go to Server Configuration -> SYSTEM SETTINGS -> Data Stores -> Add New Data Store. It has options for DATABASE, LDAP and CUSTOM. This document uses LDAP store to go through the configuration. Provide details such as HOSTNAME, LDAP TYPE (Active Directory in this doc), USER DN, PASSWORD
+2. Go to **Server Configuration**. Click on **System Settings** -> **Data Store**s. In the Manage Data Stores page, click on **Add New Data Store**. 
+	a. Data Store Type: In our example, we'll use the **LDAP** type. Select **LDAP** and click on **Next**. 
+	b. LDAP Configuration: Provide details regarding your LDAP connection. The configuration will require the following infromation: HOSTNAME, LDAP TYPE (Active Directory in this doc), USER DN, PASSWORD. When you click on **Next**, it will attempt to connect to your LDAP server. 
 
-<h2> In case SP connection is not created </h2>
+<h2> If the Service Provider connection is not created </h2>
 <h3> Generating Identitiy Provider metadata </h3>
 
-1. Go To Server Configuration -> ADMINISTRATIVE FUNCTIONS -> Metadata Export -> Select Information to include in Metadata manually -> Protocol preselected -> Attribute Contract.
-These attributes are the ones to be provided as input for Rancher Access Control configuration.
+1. Go To **Server Configuration**. Click on **Administrative Functions** -> **Metadata Export**.  
+	a. Metadata Mode: Pick **Select Information to include in Metadata manually** and click on **Next**. 
+	b. Protocol: The protocol is already pre-selected, so click on **Next**.
+	c. Attribute Contract: These are the attributes that will need to configured in order to be used when configuring Access Control in Rancher. There are four attributes that need to be added:
+		1. cn
+		2. displayName
+		3. givenName
+		4. memberOf
 
-For example this is the Attribute contract
+Example of what the Attribute Contract page should look like after adding all 4 fields:
 ![Attribute Contract IdP](https://github.com/mrajashree/Documents/blob/master/images/IdP-metadata-creation.png)
 
 and the corresponding fields for Rancher Access Control configuration attributes
