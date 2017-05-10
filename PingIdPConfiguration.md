@@ -60,7 +60,8 @@ BASE URL -> http://x.x.x.x:8080
 	
 	vi) Under LDAP Directory Search, enter BASE DN, let SEARCH SCOPE be Subtree. In the section `Attributes to return from search`, you will see Subject DN is already listed. This is where we select our attributes from the LDAP data store. Select and add displayName, givenName, cn and memberOf (with Nested Groups option). Provide a search filter, for example, (sAMAccountName=${username}). 
 	
-	vii) Under Attribute Contract Fulfillment is where you map the attributes you specified while defining attribute contract in step 6.ii, to the attributes you selected from LDAP store in step 6.vi
+	vii) Under Attribute Contract Fulfillment is where you map the attributes you specified while defining attribute contract in step 6.ii), to the attributes you selected from LDAP store in step 6.vi)
+	
 	This is how it should be mapped
 	![mapping](https://github.com/mrajashree/Documents/blob/master/images/AttributeContractFulfillment.png)
 	
