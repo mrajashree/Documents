@@ -122,19 +122,20 @@ openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.k
 	
 		* Click on **Next** to move from **Protocol Settings** to **Summary**. 
 		* Summary: Click on **Done**. 
-	f. Click on **Next** to move from **Browser SSO** to **Credentials**. 
-	g. Credentials: Click on **Configure Credentials**. 
-		* Back-Channel Authentication: Click on **Configure**.
-			i) Inbound Authentication Type: Select **Digital Signature (Browser SSO Profile Only)**. Keep **Require SSL** selected. Click on **Next**. 
-			ii) Summary: Click on **Done**. 
-		* Click on **Next** to move from **Back-Channel Authentication** to **Digital Signature Settings**.
-		* Digital Signature Settings: Select the signing certificate from the dropdown menu. Make sure to select the checkbox for **Include this certificate's public key certificate in the <keyinfo> element.** Select the checkbox for the **Include the Raw Key in the Signature <keyvalue> element.** Click on **Next**. 
-		* Signature Verification Settings: Click on **Managae Signature Verification Settings**. 
-			i) Trust Model: Leave default selection, i.e. `UNANCHORED`. Click on **Next**.
-			ii) Signature Verification Certificate: Select the certificate from the dropdown for the **Primary** and click on **Next**. 
-			iii) Summary: Click on **Done**.
-		* Click on **Next** to move from **Signature Verification Settings** to **Summary**. 
-		* Summary: Click on **Done**. 
+	f. Click on **Next** to move from **Browser SSO** to **Credentials**. </br>
+	g. Credentials: Click on **Configure Credentials**. </br>
+		
+		* Back-Channel Authentication: Click on **Configure**.</br>
+			i) Inbound Authentication Type: Select **Digital Signature (Browser SSO Profile Only)**. Keep **Require SSL** selected. Click on **Next**. </br>
+			ii) Summary: Click on **Done**. </br>
+		* Click on **Next** to move from **Back-Channel Authentication** to **Digital Signature Settings**.</br>
+		* Digital Signature Settings: Select the signing certificate from the dropdown menu. Make sure to select the checkbox for **Include this certificate's public key certificate in the <keyinfo> element.** Select the checkbox for the **Include the Raw Key in the Signature <keyvalue> element.** Click on **Next**. </br>
+		* Signature Verification Settings: Click on **Managae Signature Verification Settings**. </br>
+			i) Trust Model: Leave default selection, i.e. `UNANCHORED`. Click on **Next**.</br>
+			ii) Signature Verification Certificate: Select the certificate from the dropdown for the **Primary** and click on **Next**. </br>
+			iii) Summary: Click on **Done**. </br>
+		* Click on **Next** to move from **Signature Verification Settings** to **Summary**. </br>
+		* Summary: Click on **Done**. </br>
 	h. Click on **Next** to move from **Credentials** to **Activation & Summary**. 
 	
 	g. Activation & Summary: Set Connection Status to `Active` and click on **Save**.
