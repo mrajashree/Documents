@@ -3,7 +3,9 @@
 1. After installing PingFederate, select the option to configure PingFederate as an Identity Provider.
 
 2. Go to **Server Configuration**. Click on **System Settings** -> **Data Store**s. In the Manage Data Stores page, click on **Add New Data Store**. 
+
 	a. Data Store Type: In our example, we'll use the **LDAP** type. Select **LDAP** and click on **Next**. 
+	
 	b. LDAP Configuration: Provide details regarding your LDAP connection. The configuration will require the following infromation: HOSTNAME, LDAP TYPE (Active Directory in this doc), USER DN, PASSWORD. When you click on **Next**, it will attempt to connect to your LDAP server. 
 
 <h2> If the Service Provider connection is not created </h2>
