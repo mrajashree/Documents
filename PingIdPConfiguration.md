@@ -70,18 +70,17 @@ openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.k
 	
 	a. Connection Type: Keep the default options and click on **Next**. </br>
 	b. Connection Options: Keep the default options and click on **Next**. </br>
-	c. Import Metadata: select the **file** option and updload the `RancherSP_metadata` file that was saved from the Rancher setup. </br>
+	c. Import Metadata: select the **FILE** option and updload the `RancherSP_metadata` file that was saved from the Rancher setup. </br>
 	d. General Info: Specific fields will be pre-filled from the Rancher metadata that was uploaded: 
 	
 		* PARTNER'S ENTITY ID -> http://<SERVER_IP>:8080/v1-auth/saml/metadata
 		* CONNECTION NAME -> http://<SERVER_IP>:8080/v1-auth/saml/metadata
 		* BASE URL -> http://<SERVER_IP>:8080
 
-	e. Browser SSO: Click on **Configure Browser SSO**. 
-	
-		* SAML Profiles: Select **IDP-INITATED SSO** and **SP-INITIATED SSO**.  Click on **Next**. 
-		* Assertion Lifetime: Keep the default values, which is 5 minutes. Click on **Next**. 
-		* Assertion Creation: Click oon **Configure Assertion Creation**.
+	e. Browser SSO: Click on **Configure Browser SSO**.</br>
+		* SAML Profiles: Select **IDP-INITATED SSO** and **SP-INITIATED SSO**.  Click on **Next**.</br>
+		* Assertion Lifetime: Keep the default values, which is 5 minutes. Click on **Next**. </br>
+		* Assertion Creation: Click oon **Configure Assertion Creation**.</br>
 	
 			i) Identity Mapping: Select the **Standard** option and click on **Next**. 
 			ii) Attribute Contract: The **SAML_SUBJECT** is already provided by default. We will extend the contract by adding the attributes we had provided to Rancher while configuring access control. For the Attribute Name Format, select `urn:mace:shibboleth:1.0:attributeNamespace:uri`. Here are the fields:
@@ -91,8 +90,8 @@ openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.k
 				* givenName
 				* memberOf
 	
-		Based on the example in previous section:
-	![Contract](https://github.com/mrajashree/Documents/blob/master/images/Attribute-Contract-SP%20connection.png)
+			Based on the example in previous section:
+			![Contract](https://github.com/mrajashree/Documents/blob/master/images/Attribute-Contract-SP%20connection.png)
 	
 			iii) Authentication Source Mapping: Click on **Map New Adapter Instance**. 
 				* Adapter Instance: Select 'PingOne HTML Form Adapter' from the dropdown menu. Click on **Next**. 
