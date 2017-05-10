@@ -48,10 +48,11 @@ openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.k
 2. Save the private key and certificate details so that it can be uploaded to the UI for when you need to configure Shibboleth.
 
 3. Go to **Admin** -> **Access Control**. Select **Shibboleth**. Enter the first four fields based on your attribute contract that was created earlier. 
-	a. Display Name Field: `displayName`
-	b. User Name Field: `givenName`
-	c. UID Field: `cn`
-	d. Groups Field: `memberOf`
+
+	a. Display Name Field: `displayName`</br>
+	b. User Name Field: `givenName`</br>
+	c. UID Field: `cn`</br>
+	d. Groups Field: `memberOf`</br>
 	
 ![Rancher Access Control configuration attributes](https://github.com/mrajashree/Documents/blob/master/images/Rancher-Attributes.png)
 
