@@ -1,5 +1,11 @@
-<h1> PingFederate Configuration </h1>
+<h1> PingFederate-Rancher Configuration </h1>
+The configuration involves following steps
+1. Generating Ping IdP metadata from pingFederate server
+2. Generating Rancher SP metadata from Rancher server
+3. Creating SP Connection from pingFederate server to the Rancher server
+4. Authenticating the user in Rancher
 
+## Setting up Data Store on Ping
 1. After installing PingFederate, select the option to configure PingFederate as an Identity Provider.
 
 2. Go to **Server Configuration**. Click on **System Settings** -> **Data Store**s. In the Manage Data Stores page, click on **Add New Data Store**. 
