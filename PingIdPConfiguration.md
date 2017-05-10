@@ -27,8 +27,8 @@ Before proceeding with these steps, make sure the host setting is saved correctl
 2. Generate private key and certificate for your server
 
 `openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.key -out certificate.crt`
-
 The above command can be used for that
+
 3. Upload/paste your private key and certificate in these fields. Upload the file PingIdP_metadata.xml in the field for `Metadata XML`
 
 4. Click on `Save`. This saves the entire config in cattle db and generates Rancher Service Provider's metadata.
