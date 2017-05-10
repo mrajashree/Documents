@@ -78,7 +78,7 @@ openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.k
 		* BASE URL -> http://<SERVER_IP>:8080
 
 	e. Browser SSO: Click on **Configure Browser SSO**.</br>
-		
+	
 		*  SAML Profiles: Select **IDP-INITATED SSO** and **SP-INITIATED SSO**.  Click on **Next**.</br>
 		*  Assertion Lifetime: Keep the default values, which is 5 minutes. Click on **Next**. </br>
 		*  Assertion Creation: Click on **Configure Assertion Creation**.</br>
