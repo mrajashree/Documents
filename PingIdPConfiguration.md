@@ -1,5 +1,5 @@
 <h1> PingFederate-Rancher Configuration </h1>
-The configuration involves following steps
+The configuration involves following steps</br>
 1. Generating Ping IdP metadata from pingFederate server</br>
 2. Generating Rancher SP metadata from Rancher server</br>
 3. Creating SP Connection from pingFederate server to the Rancher server</br>
