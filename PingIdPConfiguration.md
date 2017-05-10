@@ -9,13 +9,18 @@
 
 1. Go To Server Configuration -> ADMINISTRATIVE FUNCTIONS -> Metadata Export -> Select Information to include in Metadata manually -> Protocol preselected -> Attribute Contract
 These attributes are the ones to be provided as input for Rancher Access Control configuration
-For example this is the Attribute contract ![Attribute Contract IdP](https://github.com/mrajashree/Documents/blob/master/images/IdP-metadata-creation.png)
-and the corresponding fields for access control configuration *pic*
+For example this is the Attribute contract
+![Attribute Contract IdP](https://github.com/mrajashree/Documents/blob/master/images/IdP-metadata-creation.png)
+
+and the corresponding fields for access control configuration
+![Rancher Access Control configuration attributes](https://github.com/mrajashree/Documents/blob/master/images/Rancher-Attributes.png)
 
 2. Complete the rest of the steps to generate metadata, export it and save as PingIdP_metadata.xml
 
 <h3> Generating Service Provider (Rancher) metadata </h3>
-1. On Rancher UI, enter the first four fields under Shibboleth access control based on your attribute contract from previous section. (Refer image in previous section point 1)
+
+1. On Rancher UI, enter the first four fields under Shibboleth access control based on your attribute contract from previous section. (Refer image *Rancher Access Control configuration attributes* in previous section point 1)
+
 2. Generate private key and certificate for your server
 `openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.key -out certificate.crt`
 The above command can be used for that
