@@ -91,7 +91,7 @@ openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.k
 				* givenName
 				* memberOf
 	
-			Based on the example in previous section:
+			Example:
 	![Contract](https://github.com/mrajashree/Documents/blob/master/images/Attribute-Contract-SP%20connection.png)
 	
 			iii) Authentication Source Mapping: Click on **Map New Adapter Instance**. 
@@ -99,12 +99,12 @@ openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.k
 				* Mapping Method: Select the second option, i.e 
 		**RETRIEVE ADDITIONAL ATTRIBUTES FROM A DATA STORE -- INCLUDES OPTIONS TO USE ALTERNATE DATA STORES AND/OR A FAILSAFE MAPPING**. 
 				* Attribute Sources & User Lookup: Click on **Add Attribute Source**. 
-					* Data Store: In the **Attribute Source Description**, add in `LDAP server`. Select the LDAP server information from 	the dropdown menu. If you want to use a separate Data Store, click on `Manage Data Stores`. Click on **Next**. 
-					* LDAP Directory Search: Enter the **BASE DN**, leave **SEARCH SCOPE** be Subtree. In the section **Attributes to return from search**, you will see **Subject DN** is already listed. We will need to add attributes from the LDAP data store. Under Root Object Class, select the `<Show All Attributes>`. Select each attribute and add all 4 required attributes., i.e `displayName`, `givenName`, `cn` and `memberOf` (with Nested Groups option). Click on **Next**. 
+					* Data Store: In the **Attribute Source Description**, add in `LDAP server`. Select the LDAP server information from the dropdown menu. If you want to use a separate Data Store, click on `Manage Data Stores`. Click on **Next**. 
+					* LDAP Directory Search: Enter the **BASE DN**, leave **SEARCH SCOPE** as Subtree. In the section **Attributes to return from search**, you will see **Subject DN** is already listed. We will need to add attributes from the LDAP data store. Under Root Object Class, select the `<Show All Attributes>`. Select each attribute and add all 4 required attributes., i.e `displayName`, `givenName`, `cn` and `memberOf` (with Nested Groups option). Click on **Next**. 
 					* LDAP Filter: Provide a search filter, e.g. `sAMAccountName=${username}`. Click on **Next**. 
-					* Attribute Contract Fulfillment: Map the attribute that were defined earlier to the attributes in the LDAP store. Click on **Next**.
+					* Attribute Contract Fulfillment: Map the attributes that were defined earlier to the attributes in the LDAP store. Click on **Next**.
 				
-		This is how it should be mapped
+		This is how the mapping should be done
 		![mapping](https://github.com/mrajashree/Documents/blob/master/images/AttributeContractFulfillment.png)
 					* Summary: Click on **Done**. 
 				* Click on **Next** to move from **Attribute Sources & User Lookup** to **Failsafe Attribute Source**.
@@ -117,7 +117,8 @@ openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.k
 		* Protocol Settings: Click on **Configure Protocol Settings**. 
 			i) Assertion Consumer Service URL:  Confirm that the Default is selected, the index is at `1` and the binding is `POST`. Edit the **Endpoint URL** so that it includes the server IP and port. The Endpoint URL should look like `http://<SERVER_IP>:8080/v1-auth/saml/acs`. Click on **Add** and then **Next**. 
 			ii) Allowable SAML Bindings: De-select `ARTIFACT`, but ensure that `POST` `REDIRECT` and `SOAP` are selected. 
-			iii) Signature Policy and Encryption Policy: This is depenedent on the user but is not required. 
+			iii) Signature Policy and Encryption Policy: This is dependent on the user but is not required. 
+			If the user selects `Always sign the SAML Assertion` in Signature Policy, then the user should select **Encrypt Entire Assertion** in the Encryption Policy.
 			iv) Summary: Click on **Done**. 
 	
 		* Click on **Next** to move from **Protocol Settings** to **Summary**. 
@@ -130,7 +131,7 @@ openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.k
 			ii) Summary: Click on **Done**. </br>
 		* Click on **Next** to move from **Back-Channel Authentication** to **Digital Signature Settings**.</br>
 		* Digital Signature Settings: Select the signing certificate from the dropdown menu. Make sure to select the checkbox for **Include this certificate's public key certificate in the <keyinfo> element.** Select the checkbox for the **Include the Raw Key in the Signature <keyvalue> element.** Click on **Next**. </br>
-		* Signature Verification Settings: Click on **Managae Signature Verification Settings**. </br>
+		* Signature Verification Settings: Click on **Manage Signature Verification Settings**. </br>
 			i) Trust Model: Leave default selection, i.e. `UNANCHORED`. Click on **Next**.</br>
 			ii) Signature Verification Certificate: Select the certificate from the dropdown for the **Primary** and click on **Next**. </br>
 			iii) Summary: Click on **Done**. </br>
