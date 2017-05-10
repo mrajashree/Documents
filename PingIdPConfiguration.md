@@ -58,9 +58,9 @@ openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.k
 
 
 
-4. Upload or paste your private key and certificate generated from step 1 into the fields. Upload the file `  these fields. Upload the file `PingIdP_metadata.xml` that was created in PingFederate into the **Metadata XML** field.
+4. Upload or paste your private key and certificate generated from step 1 into the fields. Upload the file `PingIdP_metadata.xml` that was created in PingFederate into the **Metadata XML** field.
 
-4. Click on **Save**. This saves the entire configuration into the database and generates th Rancher Service Provider's metadata. 
+4. Click on **Save**. This saves the entire configuration into the database and generates the Rancher Service Provider's metadata. 
 
 5. Download the metadata file from http://<SERVER_IP>:8080/v1-auth/saml/metadata. Save the file as `RancherSP_metadata`.
 
