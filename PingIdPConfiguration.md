@@ -25,7 +25,9 @@ Before proceeding with these steps, make sure the host setting is saved correctl
 1. On Rancher UI, enter the first four fields under Shibboleth access control based on your attribute contract from previous section. (Refer image *Rancher Access Control configuration attributes* in previous section point 1)
 
 2. Generate private key and certificate for your server
+
 `openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.key -out certificate.crt`
+
 The above command can be used for that
 3. Upload/paste your private key and certificate in these fields. Upload the file PingIdP_metadata.xml in the field for `Metadata XML`
 
