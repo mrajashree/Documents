@@ -46,21 +46,32 @@ BASE URL -> http://x.x.x.x:8080
 
 6. In the next section of `Assertion Creation`, click `Configure Assertion Creation`
 	i) In Identity Mapping, select STANDARD option
+	
 	ii) Under Attribute Contract, SAML_SUBJECT is already provided by default. Over here we'll Extend the Contract by adding the attributes we provide to Rancher while configuring access control. Based on the example in previous section
 	![Contract](https://github.com/mrajashree/Documents/blob/master/images/Attribute-Contract-SP%20connection.png)
+	
 	iii) In Authentication Source Mapping, click on 'Map New Adapter Instance'. Select 'PingOne HTML Form Adapter' (provided by default) and click Next
+	
 	iv) In Mapping Method, select the second option, i.e 
 	`RETRIEVE ADDITIONAL ATTRIBUTES FROM A DATA STORE -- INCLUDES OPTIONS TO USE ALTERNATE DATA STORES AND/OR A FAILSAFE MAPPING`
+	
 	v) Under Attribute Sources & User Lookup, click on `Add Attribute Source`. Since we're using LDAP in this doc, select the already added LDAP server information from the dropdown. If you want to use a separate Data Store, click on `Manage Data Stores`. Once Data Store is selected click next
+	
 	vi) Under LDAP Directory Search, enter BASE DN, let SEARCH SCOPE be Subtree. In the section `Attributes to return from search`, you will see Subject DN is already listed. This is where we select our attributes from the LDAP data store. Select and add displayName, givenName, cn and memberOf (with Nested Groups option). Provide a search filter, for example, (sAMAccountName=${username}). 
+	
 	vii) Under Attribute Contract Fulfillment is where you map the attributes you specified while defining attribute contract in step 6.ii, to the attributes you selected from LDAP store in step 6.vi
 	This is how it should be mapped
 	![mapping](https://github.com/mrajashree/Documents/blob/master/images/AttributeContractFulfillment.png)
-	viiI) Under Failsafe Attribute Source, select ABORT THE SSO TRANSACTION.
+	
+	viii) Under Failsafe Attribute Source, select ABORT THE SSO TRANSACTION.
+	
 7. In Protocol Settings, click on `Configure Protocol Settings`
 	i) Assertion Consumer Service URL should be http://x.x.x.x:8080/v1-auth/saml/acs (POST)
+	
 	ii) In Allowable SAML Bindings, select POST, REDIRECT and SOAP. Complete rest of the configuration for Protocol Settings
+	
 	iii) Configure the Credentials and Signature Verification sections
+	
 8. After saving this, when redirected to Activation & Summary page, set Connection Status to Active and click Save
 
 <h2> Rancher UI </h2>
