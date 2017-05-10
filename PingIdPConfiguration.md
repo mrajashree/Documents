@@ -12,9 +12,12 @@
 <h3> Generating Identitiy Provider metadata </h3>
 
 1. Go To **Server Configuration**. Click on **Administrative Functions** -> **Metadata Export**.  
-	a. Metadata Mode: Pick **Select Information to include in Metadata manually** and click on **Next**. 
+	a. Metadata Mode: Pick **Select Information to include in Metadata manually** and click on **Next**.
+	
 	b. Protocol: The protocol is already pre-selected, so click on **Next**.
+	
 	c. Attribute Contract: These are the attributes that will need to configured in order to be used when configuring Access Control in Rancher. There are four attributes that need to be added:
+	
 		1. cn
 		2. displayName
 		3. givenName
