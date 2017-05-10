@@ -78,9 +78,10 @@ openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.k
 		* BASE URL -> http://<SERVER_IP>:8080
 
 	e. Browser SSO: Click on **Configure Browser SSO**.</br>
-		* SAML Profiles: Select **IDP-INITATED SSO** and **SP-INITIATED SSO**.  Click on **Next**.</br>
-		* Assertion Lifetime: Keep the default values, which is 5 minutes. Click on **Next**. </br>
-		* Assertion Creation: Click oon **Configure Assertion Creation**.</br>
+		
+		*  SAML Profiles: Select **IDP-INITATED SSO** and **SP-INITIATED SSO**.  Click on **Next**.</br>
+		*  Assertion Lifetime: Keep the default values, which is 5 minutes. Click on **Next**. </br>
+		*  Assertion Creation: Click oon **Configure Assertion Creation**.</br>
 	
 			i) Identity Mapping: Select the **Standard** option and click on **Next**. 
 			ii) Attribute Contract: The **SAML_SUBJECT** is already provided by default. We will extend the contract by adding the attributes we had provided to Rancher while configuring access control. For the Attribute Name Format, select `urn:mace:shibboleth:1.0:attributeNamespace:uri`. Here are the fields:
@@ -96,15 +97,15 @@ openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.k
 			iii) Authentication Source Mapping: Click on **Map New Adapter Instance**. 
 				* Adapter Instance: Select 'PingOne HTML Form Adapter' from the dropdown menu. Click on **Next**. 
 				* Mapping Method: Select the second option, i.e 
-	**RETRIEVE ADDITIONAL ATTRIBUTES FROM A DATA STORE -- INCLUDES OPTIONS TO USE ALTERNATE DATA STORES AND/OR A FAILSAFE MAPPING**. 
+		**RETRIEVE ADDITIONAL ATTRIBUTES FROM A DATA STORE -- INCLUDES OPTIONS TO USE ALTERNATE DATA STORES AND/OR A FAILSAFE MAPPING**. 
 				* Attribute Sources & User Lookup: Click on **Add Attribute Source**. 
 					* Data Store: In the **Attribute Source Description**, add in `LDAP server`. Select the LDAP server information from 	the dropdown menu. If you want to use a separate Data Store, click on `Manage Data Stores`. Click on **Next**. 
 					* LDAP Directory Search: Enter the **BASE DN**, leave **SEARCH SCOPE** be Subtree. In the section **Attributes to return from search**, you will see **Subject DN** is already listed. We will need to add attributes from the LDAP data store. Under Root Object Class, select the `<Show All Attributes>`. Select each attribute and add all 4 required attributes., i.e `displayName`, `givenName`, `cn` and `memberOf` (with Nested Groups option). Click on **Next**. 
 					* LDAP Filter: Provide a search filter, e.g. `sAMAccountName=${username}`. Click on **Next**. 
 					* Attribute Contract Fulfillment: Map the attribute that were defined earlier to the attributes in the LDAP store. Click on **Next**.
 				
-	This is how it should be mapped
-	![mapping](https://github.com/mrajashree/Documents/blob/master/images/AttributeContractFulfillment.png)
+		This is how it should be mapped
+		![mapping](https://github.com/mrajashree/Documents/blob/master/images/AttributeContractFulfillment.png)
 					* Summary: Click on **Done**. 
 				* Click on **Next** to move from **Attribute Sources & User Lookup** to **Failsafe Attribute Source**.
 				* Failsafe Attribute Source: Select **ABORT THE SSO TRANSACTION**. Click on **Next**. 
