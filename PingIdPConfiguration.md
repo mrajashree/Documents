@@ -24,11 +24,13 @@
 
 Example of what the Attribute Contract page should look like after adding all 4 fields:
 ![Attribute Contract IdP](https://github.com/mrajashree/Documents/blob/master/images/IdP-metadata-creation.png)
-
-	c. Signing Key: Select the certificate from the dropdown menu. Click on **Next**. 
-	d. Metadata Signing: Select the signing certificate from the dropdown menu. Make sure to select the checkbox for **Include this certificate's public key certificate in the <keyinfo> element.** Select the checkbox for the **Include the Raw Key in the Signature <keyvalue> element.** Click on **Next**. 
-	e. XML Encryption Certificate: Select the Encryption certificate from the dropdown menu. Click on **Next**. 
-	f. Export & Summary: Click on the **Export** button and save the file as `PingIdP_metadata.xml`. Click on **Done**. 
+	d. Signing Key: Select the certificate from the dropdown menu. Click on **Next**. 
+	
+	e. Metadata Signing: Select the signing certificate from the dropdown menu. Make sure to select the checkbox for **Include this certificate's public key certificate in the <keyinfo> element.** Select the checkbox for the **Include the Raw Key in the Signature <keyvalue> element.** Click on **Next**. 
+	
+	f. XML Encryption Certificate: Select the Encryption certificate from the dropdown menu. Click on **Next**. 
+	
+	g. Export & Summary: Click on the **Export** button and save the file as `PingIdP_metadata.xml`. Click on **Done**. 
 
 ## Generating Service Provider (Rancher) Metadata 
 
