@@ -23,16 +23,24 @@
 Example of what the Attribute Contract page should look like after adding all 4 fields:
 ![Attribute Contract IdP](https://github.com/mrajashree/Documents/blob/master/images/IdP-metadata-creation.png)
 
-and the corresponding fields for Rancher Access Control configuration attributes
-![Rancher Access Control configuration attributes](https://github.com/mrajashree/Documents/blob/master/images/Rancher-Attributes.png)
-
 2. Complete the rest of the steps to generate metadata, export it and save as PingIdP_metadata.xml
+
+<h2> Pre-existing SP connection </h2>
+
+1. If SP connection is already created for PingFederate IdP configuration, to get the IdP metadata, go to 
+**Server Configuration**. Click on **ADMINISTRATIVE FUNCTIONS** -> **Metadata Export** ->  USE A CONNECTION FOR METADATA GENERATION, and use the existing connection from dropdown presented
+
+2. Make sure the SP Connection's following fields are set correctly:
+* Partner's Entity ID (Connection ID)
+* Base URL
+* Assertion Consumer Service URL (Endpoint)
 
 <h3> Generating Service Provider (Rancher) metadata </h3>
 
 Before proceeding with these steps, make sure the host setting is saved correctly. Go to Admin -> Settings -> Host Registration URL -> Choose 'This site's address' and hit Save. In absense of this, metadata generated will be incorrect
 
-1. On Rancher UI, enter the first four fields under Shibboleth access control based on your attribute contract from previous section. (Refer image *Rancher Access Control configuration attributes* in previous section point 1)
+1. On Rancher UI, enter the first four fields under Shibboleth access control based on your attribute contract from previous section. 
+![Rancher Access Control configuration attributes](https://github.com/mrajashree/Documents/blob/master/images/Rancher-Attributes.png)
 
 2. Generate private key and certificate for your server
 
@@ -97,12 +105,3 @@ BASE URL -> http://x.x.x.x:8080
 <h2> Rancher UI </h2>
 Back to Rancher UI, click on `Test`. This will provide you the login form, once authenticated, access control will be enabled
 
-<h2> Pre-existing SP connection </h2>
-
-1. If SP connection is already created for PingFederate IdP configuration, to get the IdP metadata, go to 
-Server Configuration -> ADMINISTRATIVE FUNCTIONS -> Metadata Export ->  USE A CONNECTION FOR METADATA GENERATION, and use the existing connection from dropdown presented
-
-2. Make sure the SP Connection's following fields are set correctly:
-* Partner's Entity ID (Connection ID)
-* Base URL
-* Assertion Consumer Service URL (Endpoint)
