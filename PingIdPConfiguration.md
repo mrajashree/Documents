@@ -87,4 +87,12 @@ BASE URL -> http://x.x.x.x:8080
 <h2> Rancher UI </h2>
 Back to Rancher UI, click on `Test`. This will provide you the login form, once authenticated, access control will be enabled
 
+<h2> Pre-existing SP connection </h2>
 
+1. If SP connection is already created for PingFederate IdP configuration, to get the IdP metadata, go to 
+Server Configuration -> ADMINISTRATIVE FUNCTIONS -> Metadata Export ->  USE A CONNECTION FOR METADATA GENERATION, and use the existing connection from dropdown presented
+
+2. Make sure the SP Connection's following fields are set correctly:
+* Partner's Entity ID (Connection ID)
+* Base URL
+* Assertion Consumer Service URL (Endpoint)
