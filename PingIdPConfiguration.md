@@ -38,7 +38,7 @@ Example of what the Attribute Contract page should look like after adding all 4 
 * Base URL
 * Assertion Consumer Service URL (Endpoint)
 
-<h3> Generating Service Provider (Rancher) metadata </h3>
+<h2> Generating Service Provider (Rancher) metadata </h2>
 
 Before proceeding with these steps, make sure the host setting is saved correctly. Go to Admin -> Settings -> Host Registration URL -> Choose 'This site's address' and hit Save. In absense of this, metadata generated will be incorrect
 
@@ -55,7 +55,7 @@ The above command can be used for that
 4. Click on `Save`. This saves the entire config in cattle db and generates Rancher Service Provider's metadata.
 Download this metadata from http://x.x.x.x:8080/v1-auth/saml/metadata. Rename this file to RancherSP_metadata
 
-<h3> Creating SP connection from PingFederate server </h3>
+<h2> Creating SP connection from PingFederate server </h2>
 
 1. In PingFederate server, go to IdP Configuration -> SP CONNECTIONS -> Create New
 
