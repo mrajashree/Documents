@@ -105,7 +105,8 @@ openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.k
 					* Attribute Contract Fulfillment: Map the attributes that were defined earlier to the attributes in the LDAP store. Click on **Next**.
 				
 		This is how the mapping should be done
-		![mapping](https://github.com/mrajashree/Documents/blob/master/images/AttributeContractFulfillment.png)
+	![mapping](https://github.com/mrajashree/Documents/blob/master/images/AttributeContractFulfillment.png)
+					
 					* Summary: Click on **Done**. 
 				* Click on **Next** to move from **Attribute Sources & User Lookup** to **Failsafe Attribute Source**.
 				* Failsafe Attribute Source: Select **ABORT THE SSO TRANSACTION**. Click on **Next**. 
