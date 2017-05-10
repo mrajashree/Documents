@@ -81,7 +81,7 @@ openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.k
 		
 		*  SAML Profiles: Select **IDP-INITATED SSO** and **SP-INITIATED SSO**.  Click on **Next**.</br>
 		*  Assertion Lifetime: Keep the default values, which is 5 minutes. Click on **Next**. </br>
-		*  Assertion Creation: Click oon **Configure Assertion Creation**.</br>
+		*  Assertion Creation: Click on **Configure Assertion Creation**.</br>
 	
 			i) Identity Mapping: Select the **Standard** option and click on **Next**. 
 			ii) Attribute Contract: The **SAML_SUBJECT** is already provided by default. We will extend the contract by adding the attributes we had provided to Rancher while configuring access control. For the Attribute Name Format, select `urn:mace:shibboleth:1.0:attributeNamespace:uri`. Here are the fields:
