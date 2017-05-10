@@ -92,7 +92,7 @@ openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.k
 				* memberOf
 	
 			Based on the example in previous section:
-			![Contract](https://github.com/mrajashree/Documents/blob/master/images/Attribute-Contract-SP%20connection.png)
+	![Contract](https://github.com/mrajashree/Documents/blob/master/images/Attribute-Contract-SP%20connection.png)
 	
 			iii) Authentication Source Mapping: Click on **Map New Adapter Instance**. 
 				* Adapter Instance: Select 'PingOne HTML Form Adapter' from the dropdown menu. Click on **Next**. 
