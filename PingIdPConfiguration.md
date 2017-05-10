@@ -40,9 +40,12 @@ Download this metadata from http://x.x.x.x:8080/v1-auth/saml/metadata. Rename th
 
 2. Leave the Connection Type and Connection Options sections as they are by default. In the Import Metadata section, select FILE option and upload RancherSP_metadata file
 
-3. The next section, `General Info` will have the following fields prefilled from the Rancher metadata you just uploaded: 
+3. The next section, `General Info` will have the following fields prefilled from the Rancher metadata you just uploaded:
+
 PARTNER'S ENTITY ID -> http://x.x.x.x:8080/v1-auth/saml/metadata
+
 CONNECTION NAME -> http://x.x.x.x:8080/v1-auth/saml/metadata
+
 BASE URL -> http://x.x.x.x:8080
 
 4. In Browser SSO, IDP-INITATED SSO and SP-INITIATED SSO have been selected as SAML Profiles. 
